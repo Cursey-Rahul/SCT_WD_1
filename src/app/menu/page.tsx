@@ -1,9 +1,15 @@
-import { foodItems } from '@/data'
+import { FoodItemType } from '@/types/types';
 import Link from 'next/link'
 import React from 'react'
+const GETDATA = async()=>{
+  const response = await fetch("http://localhost:3000/api/category")
+  return response.json();
+}
 
-const menuPage = () => {
-  return (
+
+const menuPage = async() => {
+  const foodItems: FoodItemType[]= await GETDATA();
+    return (
     <div className='h-[calc(100vh-6rem)] md:h-[calc(100vh-8rem)] p-4 lg:px-15 xl:px-25 flex flex-col md:flex-row items-center'>
       {foodItems.map((items)=>(
           <Link key={items.id} 

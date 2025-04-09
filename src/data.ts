@@ -128,41 +128,41 @@ export type Product = {
       
   ];
   // Define the type for the object structure
-type FoodItem = {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  category: string;
-  colour: string;
-};
+// type FoodItem = {
+//   id: number;
+//   title: string;
+//   description: string;
+//   image: string;
+//   category: string;
+//   colour: string;
+// };
 
 // Create the array of food items with the specified type
-export const foodItems: FoodItem[] = [
-  {
-    id: 1,
-    title: "Classic Cheeseburger",
-    description: "A juicy beef patty with melted cheddar cheese, lettuce, tomato, and pickles in a soft bun.",
-    image: "/temperory/m1.png",
-    category: "Burger",
-    colour: "white", // Golden yellow for the title text
-  },
-  {
-    id: 2,
-    title: "Sushi Platter",
-    description: "A variety of fresh sushi rolls, including salmon, tuna, and avocado, served with wasabi and soy sauce.",
-    image: "/temperory/m2.png",
-    category: "Japanese",
-    colour: "black", // Light sea green for the title text
-  },
-  {
-    id: 3,
-    title: "Margherita Pizza",
-    description: "A traditional pizza with fresh mozzarella, tomato sauce, and basil leaves on a crispy thin crust.",
-    image: "/temperory/m3.png",
-    category: "Italian",
-    colour: "white",  // Tomato red for the title text
-  }
-];
+// export const foodItems: FoodItem[] = [
+//   {
+//     id: 1,
+//     title: "Classic Cheeseburger",
+//     description: "A juicy beef patty with melted cheddar cheese, lettuce, tomato, and pickles in a soft bun.",
+//     image: "/temperory/m1.png",
+//     category: "Burger",
+//     colour: "white", // Golden yellow for the title text
+//   },
+//   {
+//     id: 2,
+//     title: "Sushi Platter",
+//     description: "A variety of fresh sushi rolls, including salmon, tuna, and avocado, served with wasabi and soy sauce.",
+//     image: "/temperory/m2.png",
+//     category: "Japanese",
+//     colour: "black", // Light sea green for the title text
+//   },
+//   {
+//     id: 3,
+//     title: "Margherita Pizza",
+//     description: "A traditional pizza with fresh mozzarella, tomato sauce, and basil leaves on a crispy thin crust.",
+//     image: "/temperory/m3.png",
+//     category: "Italian",
+//     colour: "white",  // Tomato red for the title text
+//   }
+// ];
 
   
