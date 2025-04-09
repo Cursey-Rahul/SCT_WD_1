@@ -1,13 +1,23 @@
 import Link from 'next/link'
 import React from 'react'
-import { foodProducts } from '@/data';
 import Image from 'next/image';
+import { Product } from '@/types/types'
 
-const categoryPage = () => {
+const GETDATA= async(category: string)=>{
+  const response = await fetch(`http://localhost:3000/api/products?category=${category}`);
+  return response.json();
+}
+
+const categoryPage = async({
+  params,
+}: {
+  params: { category: string };
+}) => {
+  const foodProducts: Product[] = await GETDATA(params.category);
   return (
     <div className='flex flex-wrap items-center'>
       {foodProducts.map((items)=>(
-        <Link href={`/product/${items.id}`} key={items.id} className='h-[60vh] w-full md:w-1/2 lg:w-1/3 p-4 border-b-2 border-r-2 border-red-500 hover:bg-fuchsia-50 transition-all duration-300'>
+        <Link href={`/product/${items.title}`} key={items.id} className='h-[60vh] w-full md:w-1/2 lg:w-1/3 p-4 border-b-2 border-r-2 border-red-500 hover:bg-fuchsia-50 transition-all duration-300'>
             <div className='relative h-[85%] '>
             <Image className='object-contain p-4 hover:rotate-[20deg] duration-500 transition-all' src={items.img} alt='' fill/>
             </div>

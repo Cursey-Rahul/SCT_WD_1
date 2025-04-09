@@ -1,9 +1,17 @@
-import { foodProducts } from '@/data'
+import { Product } from '@/types/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const products = () => {
+const GETDATA= async(all : string) => {
+  const response = await fetch(`http://localhost:3000/api/products?category=${all}`);
+  return response.json();
+}
+
+
+
+const products = async() => {
+  const foodProducts : Product[] = await GETDATA("burger");
   return (
     <div className='flex flex-wrap items-center'>
       {foodProducts.map((items)=>(

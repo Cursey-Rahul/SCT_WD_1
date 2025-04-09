@@ -1,9 +1,15 @@
-import { foodProducts } from '@/data'
+import { Product } from '@/types/types'
 import Image from 'next/image'
 import React from 'react'
 
+const GETDATA=async()=>{
+  const data= await fetch("http://localhost:3000/api/products")
+  return data.json()
+}
 
-const Featured = () => {
+
+const Featured = async() => {
+  const foodProducts:Product[]=await GETDATA();
   return (
     <div className='w-screen overflow-x-scroll' >
       {/*cards*/}

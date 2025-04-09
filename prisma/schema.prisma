@@ -17,7 +17,7 @@ model Category{
   id       String   @id @default(cuid())
   createdAt DateTime @default(now())
   title    String
-  catslug String   @unique
+  slug String   @unique
   colour String
   description String
   img String
@@ -32,7 +32,7 @@ model Product{
   featured Boolean @default(false)
   description     String
   img       String?
-  category Category @relation(fields: [slug], references: [catslug])
-  slug     String
+  category Category @relation(fields: [catSlug], references: [slug])
+  catSlug     String
    
 }
